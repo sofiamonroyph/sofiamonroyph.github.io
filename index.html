@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico -->
+  <title>Sofía Monroy — Fotógrafa Deportiva | Liga BetPlay Colombia</title>
+  <meta name="description" content="Sofía Monroy, fotógrafa freelance acreditada en el Fútbol Profesional Colombiano. Cobertura de la Liga BetPlay Dimayor, fotografía deportiva, retratos y más. Bogotá, Colombia.">
+  <meta name="keywords" content="fotógrafa deportiva Colombia, fotografía fútbol colombiano, Liga BetPlay, fotógrafa Bogotá, SM Producciones, Sofía Monroy, fotografía deportiva, FPC">
+  <meta name="author" content="Sofía Monroy">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sofiamonroy.netlify.app/">
+  <meta name="google-site-verification" content="iutOooISuXgfmc29AVEWvmJIuGuji0A1TyD9D2qnO4Q" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sofiamonroy.netlify.app/">
+  <meta property="og:title" content="Sofía Monroy — Fotógrafa Deportiva | Liga BetPlay Colombia">
+  <meta property="og:description" content="Fotógrafa freelance acreditada en el Fútbol Profesional Colombiano. Exposición atrevida, color jerarquizado y edición cinematográfica de alta precisión.">
+  <meta property="og:image" content="https://sofiamonroy.netlify.app/fotos/hero/portada.jpg">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="SM Producciones — Sofía Monroy">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sofía Monroy — Fotógrafa Deportiva">
+  <meta name="twitter:description" content="Fotógrafa freelance acreditada en el Fútbol Profesional Colombiano. Bogotá, Colombia.">
+  <meta name="twitter:image" content="https://sofiamonroy.netlify.app/fotos/hero/portada.jpg">
+
+  <!-- Schema.org (datos estructurados para Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sofía Monroy",
+    "jobTitle": "Fotógrafa Deportiva",
+    "description": "Fotógrafa freelance acreditada en el Fútbol Profesional Colombiano",
+    "url": "https://sofiamonroy.netlify.app",
+    "sameAs": [
+      "https://www.instagram.com/sofiamonroy.ph",
+      "https://www.behance.net/sofiamonroy"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bogotá",
+      "addressCountry": "CO"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+      --red: #9B0E0E;
+      --red-dark: #7a0a0a;
+      --black: #080808;
+      --white: #fff;
+      --off-white: #f5f5f3;
+      --gray-light: #e8e8e8;
+      --gray-mid: #aaa;
+      --text: #111;
+      --text-muted: #555;
+    }
+
+    body { background:var(--off-white); color:var(--text); font-family:'Barlow',sans-serif; }
+
+    /* NAV */
+    nav {
+      position:sticky; top:0; z-index:200;
+      background:rgba(245,245,243,0.97);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--gray-light);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 2.5rem; height:64px;
+    }
+    .nav-logo { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:4px; color:var(--text); text-decoration:none; }
+    .hamburger { display:none; }
+    .nav-instagram { display:none; }
+    .nav-logo span { color:var(--red); }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a { color:#555; text-decoration:none; font-size:0.82rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--red); }
+
+    /* HERO */
+    .hero {
+      min-height:100vh; display:grid;
+      grid-template-columns:1.5fr 1fr;
+      background:var(--white);
+    }
+    .hero-photo {
+      position:relative;
+      overflow:hidden;
+      order:2;
+      margin:3rem 4rem 3rem 1.5rem;
+      border-radius:6px;
+      min-height:unset;
+      max-height:82vh;
+    }
+    .hero-photo img {
+      width:100%; height:100%; object-fit:cover;
+      display:block;
+      max-height:82vh;
+    }
+    .hero-photo-label {
+      position:absolute; bottom:2rem;
+      font-size:0.6rem; letter-spacing:3px; text-transform:uppercase;
+      color:rgba(255,255,255,0.5); font-weight:600;
+    }
+    .hero-photo::after {
+      content:''; position:absolute; top:10%; left:0;
+      width:3px; height:80%; background:var(--red);
+    }
+    .hero-content {
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding:4rem 4rem 4rem 5rem; order:1;
+      text-align:left;
+    }
+    .hero-logo { width:140px; height:140px; margin-bottom:2rem; object-fit:contain; display:block; align-self:flex-start; margin-left: auto; margin-right: auto; max-width: 100%; }
+    .hero-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,6vw,5.5rem); letter-spacing:6px; line-height:1; color:var(--text); margin-bottom:1rem; }
+    .hero-name span { color:var(--red); }
+    .hero-title { font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; color:#444; margin-bottom:2.5rem; font-weight:500; }
+    .hero-btns { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .btn-primary {
+      display:inline-block; background:var(--red); color:#fff;
+      border:2px solid var(--red); padding:0.9rem 2.8rem;
+      font-family:'Barlow',sans-serif; font-size:0.72rem;
+      letter-spacing:3px; text-transform:uppercase; font-weight:600;
+      cursor:pointer; text-decoration:none; transition:all 0.25s;
+    }
+    .btn-primary:hover { background:transparent; color:var(--red); }
+    .btn-instagram {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      border:2px solid #111; color:#111; background:transparent;
+      padding:0.9rem 1.8rem; font-family:'Barlow',sans-serif;
+      font-size:0.72rem; letter-spacing:2px; text-transform:uppercase;
+      font-weight:600; cursor:pointer; text-decoration:none; transition:all 0.25s;
+    }
+    .btn-instagram:hover { background:#111; color:#fff; }
+
+    /* SECTIONS */
+    .section { padding:6rem 4rem; background:var(--off-white); }
+    .section-white { padding:5rem 4rem; background:var(--white); }
+    .section-dark { padding:6rem 4rem; background:var(--black); }
+    .section-label { font-size:0.65rem; letter-spacing:5px; text-transform:uppercase; color:var(--red); font-weight:600; margin-bottom:0.5rem; }
+    .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.2rem,5vw,3.8rem); letter-spacing:5px; color:var(--text); margin-bottom:3rem; }
+    .section-title-light { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.2rem,5vw,3.8rem); letter-spacing:5px; color:var(--white); margin-bottom:1rem; }
+    .divider { width:100%; height:1px; background:var(--gray-light); }
+
+    /* PORTFOLIO GRID */
+    .grid {
+      display:grid; grid-template-columns:repeat(2,1fr);
+      gap:1.2rem; max-width:1200px; margin:0 auto;
+    }
+    .grid-item {
+      position:relative; aspect-ratio:16/9;
+      overflow:hidden; cursor:pointer; background:#bbb;
+    }
+    .grid-item.featured { grid-column:span 2; aspect-ratio:21/8; }
+    .grid-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease; display:block; }
+    .grid-item:hover img { transform:scale(1.04); }
+    .grid-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.15) 60%,transparent 100%);
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:1.4rem; opacity:0; transition:opacity 0.35s;
+    }
+    .grid-item:hover .grid-overlay { opacity:1; }
+    .grid-title-static {
+      position:absolute; bottom:1rem; left:1.2rem;
+      font-family:'Bebas Neue',sans-serif; font-size:2.2rem;
+      letter-spacing:3px; color:#fff;
+      text-shadow:0 2px 16px rgba(0,0,0,0.9); transition:opacity 0.3s;
+    }
+    .grid-item:hover .grid-title-static { opacity:0; }
+    .grid-title-hover { font-family:'Bebas Neue',sans-serif; font-size:2.8rem; letter-spacing:4px; color:#fff; line-height:1.1; }
+    .grid-sub { font-size:0.9rem; letter-spacing:3px; color:#ff7070; text-transform:uppercase; font-weight:600; margin-top:0.5rem; }
+
+    /* ABOUT */
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .about-text p { font-size:1.05rem; color:#333; line-height:2; font-weight:400; margin-bottom:1.5rem; }
+    .about-text p strong { color:var(--text); font-weight:600; }
+    .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .stat-card { border:1px solid var(--gray-light); padding:1.8rem 1.5rem; text-align:center; background:#fafafa; }
+    .stat-number { font-family:'Bebas Neue',sans-serif; font-size:3rem; color:var(--red); line-height:1; }
+    .stat-label { font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; color:#555; font-weight:600; margin-top:0.6rem; line-height:1.4; }
+
+    /* CONTACT */
+    .contact-sub { font-size:0.8rem; color:#ccc; letter-spacing:2px; text-transform:uppercase; margin-bottom:3rem; font-weight:400; }
+    .form-wrap { max-width:600px; margin:0 auto; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+    .form-field { display:flex; flex-direction:column; gap:0.45rem; margin-bottom:1rem; }
+    .form-field label { font-size:0.62rem; letter-spacing:3px; text-transform:uppercase; color:#fff; font-weight:600; }
+    .form-field input, .form-field textarea {
+      background:#222; border:1px solid #444; color:#fff;
+      padding:0.85rem 1.1rem; font-family:'Barlow',sans-serif;
+      font-size:0.9rem; font-weight:400; outline:none;
+      transition:border-color 0.2s; resize:none; width:100%;
+    }
+    .form-field input::placeholder, .form-field textarea::placeholder { color:#888; }
+    .form-field input:focus, .form-field textarea:focus { border-color:var(--red); }
+    .form-field textarea { min-height:140px; }
+    .btn-send {
+      background:var(--red); border:none; color:#fff;
+      padding:1rem 2.5rem; font-family:'Barlow',sans-serif;
+      font-size:0.72rem; letter-spacing:3px; text-transform:uppercase;
+      font-weight:600; cursor:pointer; transition:background 0.25s;
+    }
+    .btn-send:hover { background:var(--red-dark); }
+    .form-note { font-size:0.75rem; color:#bbb; margin-top:1rem; font-weight:400; }
+    .form-note a { color:var(--red); text-decoration:none; }
+
+    /* FOOTER */
+    footer {
+      background:#111; border-top:3px solid var(--red);
+      padding:2.5rem; display:flex; align-items:center;
+      justify-content:space-between; flex-wrap:wrap; gap:1rem;
+    }
+    .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:1.1rem; letter-spacing:5px; color:#fff; }
+    .footer-copy { font-size:0.75rem; color:#ccc; letter-spacing:2px; text-transform:uppercase; font-weight:500; }
+    .footer-copy span { color:var(--red); }
+
+    /* ===== PÁGINA INTERNA ===== */
+    .inner-page {
+      display:none; position:fixed; inset:0;
+      background:var(--off-white); z-index:500; overflow-y:auto;
+    }
+    .inner-page.active { display:block; }
+    .inner-header {
+      background:#fff; border-bottom:1px solid var(--gray-light);
+      padding:0 3rem; height:64px;
+      display:flex; align-items:center; gap:2rem;
+      position:sticky; top:0; z-index:10;
+    }
+    .inner-back {
+      font-family:'Barlow',sans-serif; font-size:0.75rem;
+      letter-spacing:2px; text-transform:uppercase; color:var(--red);
+      cursor:pointer; border:1px solid var(--red);
+      padding:0.45rem 1.2rem; transition:all 0.2s;
+      font-weight:600;
+    }
+    .inner-back:hover { background:var(--red); color:#fff; }
+    .inner-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:4px; color:var(--text); }
+    .inner-sub { font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--red); font-weight:600; margin-left:auto; }
+
+    .inner-grid {
+      padding:2rem 5rem;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .grid-sizer { width:25%; }
+    .inner-grid-item {
+      width:25%;
+      padding:0.25rem;
+      overflow:hidden;
+      cursor:pointer;
+      position:relative;
+      display:block;
+      float:left;
+      box-sizing:border-box;
+    }
+    .inner-grid-item img {
+      width:100%; height:auto;
+      display:block;
+      transition:transform 0.4s ease;
+      image-rendering:high-quality;
+    }
+    .inner-grid-item:hover img { transform:scale(1.05); }
+    .zoom-icon {
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%) scale(0);
+      width:44px; height:44px;
+      background:rgba(155,14,14,0.9); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      z-index:2; transition:transform 0.3s; pointer-events:none;
+    }
+    .inner-grid-item:hover .zoom-icon { transform:translate(-50%,-50%) scale(1); }
+    .zoom-icon svg { width:18px; height:18px; fill:#fff; }
+
+    /* PLACEHOLDER para fotos faltantes */
+    .inner-grid-item.placeholder {
+      background:linear-gradient(135deg,#ccc 0%,#aaa 100%);
+      display:flex; align-items:center; justify-content:center;
+      cursor:default;
+    }
+    .inner-grid-item.placeholder .zoom-icon { display:none; }
+    .placeholder-label {
+      font-size:0.6rem; letter-spacing:3px; text-transform:uppercase;
+      color:rgba(255,255,255,0.6); font-weight:600; text-align:center;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      display:none; position:fixed; inset:0;
+      background:rgba(80,80,80,0.97); z-index:1000;
+      align-items:center; justify-content:center; flex-direction:column;
+    }
+    .lightbox.active { display:flex; }
+    .lightbox-img-wrap { max-height:85vh; max-width:92vw; display:flex; align-items:center; }
+    .lightbox-img-wrap img { max-height:85vh; max-width:92vw; object-fit:contain; display:block; }
+    .lightbox-close {
+      position:fixed; top:1.5rem; right:2rem; color:#fff; cursor:pointer;
+      font-family:'Barlow',sans-serif; font-size:0.75rem; letter-spacing:2px;
+      text-transform:uppercase; font-weight:600;
+      border:1px solid rgba(255,255,255,0.4); padding:0.4rem 1.2rem;
+      transition:all 0.2s; z-index:10;
+    }
+    .lightbox-close:hover { background:var(--red); border-color:var(--red); }
+    .lightbox-arrow {
+      position:fixed; top:50%; transform:translateY(-50%);
+      background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2);
+      color:#fff; cursor:pointer; font-size:1.5rem;
+      padding:1.5rem 1rem; transition:all 0.2s; z-index:10;
+    }
+    .lightbox-arrow:hover { background:var(--red); border-color:var(--red); }
+    .lightbox-arrow.prev { left:1rem; }
+    .lightbox-arrow.next { right:1rem; }
+    .lightbox-counter {
+      position:fixed; bottom:2rem; left:50%; transform:translateX(-50%);
+      color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:4px; text-transform:uppercase;
+    }
+
+    /* RESPONSIVE MÓVIL */
+    @media(max-width:768px) {
+
+      /* NAV MÓVIL */
+      nav {
+        padding:0 1.2rem;
+        height:56px;
+        position:relative;
+      }
+      .nav-logo {
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+        font-size:1rem;
+        letter-spacing:3px;
+      }
+      .nav-links { display:none; }
+
+      .hamburger {
+        display:flex;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+        padding:4px;
+      }
+      .hamburger span {
+        width:22px; height:2px;
+        background:var(--text);
+        display:block;
+        transition:all 0.3s;
+      }
+      .nav-instagram {
+        display:flex !important;
+        align-items:center;
+      }
+      .nav-instagram svg { width:22px; height:22px; fill:var(--text); }
+
+      /* MENÚ MÓVIL */
+      .mobile-menu {
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(245,245,243,0.98);
+        z-index:999;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:2.5rem;
+      }
+      .mobile-menu.open { display:flex; }
+      .mobile-menu a {
+        font-family:'Bebas Neue',sans-serif;
+        font-size:2.5rem;
+        letter-spacing:5px;
+        color:var(--text);
+        text-decoration:none;
+      }
+      .mobile-menu a:hover { color:var(--red); }
+      .mobile-menu-close {
+        position:absolute;
+        top:1.5rem; right:1.5rem;
+        font-size:1.5rem;
+        cursor:pointer;
+        color:var(--text);
+        background:none; border:none;
+        font-family:'Barlow',sans-serif;
+      }
+
+      /* HERO MÓVIL — fullscreen con foto de fondo */
+      .hero {
+        display:block;
+        position:relative;
+        min-height:100vh;
+      }
+      .hero-photo {
+        position:absolute !important;
+        inset:0 !important;
+        margin:0 !important;
+        border-radius:0 !important;
+        min-height:100vh !important;
+        max-height:none !important;
+        order:1 !important;
+        z-index:0;
+      }
+      .hero-photo img {
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover !important;
+        max-height:none !important;
+      }
+      .hero-photo::before {
+        content:'';
+        position:absolute; inset:0;
+        background:linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+        z-index:1;
+      }
+      .hero-photo::after { display:none; }
+      .hero-content {
+        position:relative;
+        z-index:2;
+        min-height:100vh;
+        display:flex !important;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-end;
+        padding:3rem 2rem 4rem !important;
+        text-align:center;
+        order:2 !important;
+      }
+      .hero-logo { width:80px; height:80px; margin-bottom:1rem; filter:brightness(0) invert(1); }
+      .hero-name { color:#fff !important; font-size:clamp(2.5rem,10vw,4rem) !important; }
+      .hero-name span { color:#ff6b6b !important; }
+      .hero-title { color:rgba(255,255,255,0.8) !important; }
+      .hero-btns { flex-direction:column; align-items:center; width:100%; gap:0.8rem; }
+      .btn-primary { background:#9B0E0E !important; border-color:#9B0E0E !important; color:#fff !important; width:100%; text-align:center; }
+      .btn-instagram { border-color:#fff !important; color:#fff !important; width:100%; text-align:center; justify-content:center; }
+
+      /* GRID MÓVIL */
+      .grid { grid-template-columns:1fr; max-width:100%; padding:0; gap:0.5rem; }
+      .grid-item { aspect-ratio:16/9; }
+      .grid-item.featured { grid-column:span 1; aspect-ratio:16/9; }
+      .grid-title-static { font-size:1.8rem; }
+
+      /* SECCIONES MÓVIL */
+      .about-grid { grid-template-columns:1fr; gap:2rem; }
+      .form-row { grid-template-columns:1fr; }
+      .section, .section-white, .section-dark { padding:3rem 1.5rem; }
+
+      /* GALERÍA INTERNA MÓVIL */
+      .inner-grid { padding:1rem 1.5rem; }
+      .grid-sizer, .inner-grid-item { width:50%; }
+      .inner-header { padding:0 1rem; gap:1rem; }
+      .inner-title { font-size:1.2rem; }
+      .inner-sub { display:none; }
+
+      /* LIGHTBOX MÓVIL */
+      .lightbox-arrow { padding:1rem 0.7rem; }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+</head>
+<body>
+
+  <!-- MENÚ MÓVIL -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+    <a href="#portafolio" onclick="closeMobileMenu()">Portafolio</a>
+    <a href="#acerca" onclick="closeMobileMenu()">Acerca</a>
+    <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+  </div>
+
+  <nav>
+    <div class="hamburger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <a class="nav-logo" href="#">SM <span>PROD</span></a>
+    <ul class="nav-links">
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#acerca">Acerca</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="nav-instagram" href="#contacto" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img class="hero-logo" src="img/logo.png" alt="SM Producciones">
+      <h1 class="hero-name">SOFÍA <span>MONROY</span></h1>
+      <p class="hero-title">Fotógrafa Deportiva &nbsp;·&nbsp; Bogotá, Colombia &nbsp;·&nbsp; Acreditada FPC</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#portafolio">Ver portafolio</a>
+        <a class="btn-instagram" href="https://instagram.com/sofiamonroy.ph" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @sofiamonroy.ph
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="fotos/hero/portada.jpg" alt="Sofía Monroy">
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PORTAFOLIO -->
+  <section class="section" id="portafolio">
+    <p class="section-label">Trabajo</p>
+    <h2 class="section-title">PORTAFOLIO</h2>
+    <div class="grid">
+
+      <div class="grid-item featured" onclick="openCategory('liga-betplay')">
+        <img src="fotos/liga-betplay/portada.jpg" alt="Liga BetPlay">
+        <span class="grid-title-static">LIGA BETPLAY</span>
+        <div class="grid-overlay">
+          <div class="grid-title-hover">Liga BetPlay</div>
+          <div class="grid-sub">Cobertura oficial · Dimayor</div>
+        </div>
+      </div>
+
+      <div class="grid-item" onclick="openCategory('close-up')">
+        <img src="fotos/close-up/portada.jpg" alt="Close-Up">
+        <span class="grid-title-static">CLOSE-UP</span>
+        <div class="grid-overlay">
+          <div class="grid-title-hover">Close-Up</div>
+          <div class="grid-sub">Primer plano · Expresiones</div>
+        </div>
+      </div>
+
+      <div class="grid-item" onclick="openCategory('hinchada')">
+        <img src="fotos/hinchada/portada.jpg" alt="Hinchada" style="object-position: center top;">
+        <span class="grid-title-static">HINCHADA</span>
+        <div class="grid-overlay">
+          <div class="grid-title-hover">Hinchada</div>
+          <div class="grid-sub">Tribuna · Barras · Ambiente</div>
+        </div>
+      </div>
+
+      <div class="grid-item" onclick="openCategory('detalles')">
+        <img src="fotos/detalles/portada.jpg" alt="Detalles">
+        <span class="grid-title-static">DETALLES</span>
+        <div class="grid-overlay">
+          <div class="grid-title-hover">Detalles</div>
+          <div class="grid-sub">Botines · Texturas · Gestos</div>
+        </div>
+      </div>
+
+      <div class="grid-item" onclick="openCategory('liga-femenina')">
+        <img src="fotos/liga-femenina/portada.jpg" alt="Liga Femenina">
+        <span class="grid-title-static">LIGA FEMENINA</span>
+        <div class="grid-overlay">
+          <div class="grid-title-hover">Liga Femenina</div>
+          <div class="grid-sub">Dimayor · Fuerza propia</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ACERCA -->
+  <section class="section-white" id="acerca">
+    <p class="section-label">Acerca de mí</p>
+    <h2 class="section-title">SOFÍA MONROY</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Soy fotógrafa freelance de la ciudad de Bogotá, <strong>acreditada en el Fútbol Profesional Colombiano</strong>, cubriendo la Liga BetPlay Dimayor tanto en su rama masculina como femenina.</p>
+        <p>Disponible para coberturas deportivas, proyectos editoriales y colaboraciones con medios y clubes.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">2025</div><div class="stat-label">Inicio Liga BetPlay</div></div>
+        <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Ligas cubiertas</div></div>
+        <div class="stat-card"><div class="stat-number">FPC</div><div class="stat-label">Acreditación oficial</div></div>
+        <div class="stat-card"><div class="stat-number">BOG</div><div class="stat-label">Bogotá, Colombia</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACTO -->
+  <section class="section-dark" id="contacto">
+    <p class="section-label">Contacto</p>
+    <h2 class="section-title-light">TRABAJEMOS JUNTOS</h2>
+    <p class="contact-sub">Disponible para coberturas, proyectos editoriales y colaboraciones</p>
+    <div class="form-wrap">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Nombre</label>
+          <input type="text" id="cf-name" placeholder="Tu nombre completo">
+        </div>
+        <div class="form-field">
+          <label>Correo electrónico</label>
+          <input type="email" id="cf-email" placeholder="tu@correo.com">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Asunto</label>
+        <input type="text" id="cf-subject" placeholder="Cobertura deportiva, colaboración...">
+      </div>
+      <div class="form-field">
+        <label>Mensaje</label>
+        <textarea id="cf-message" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+      </div>
+      <button class="btn-send" onclick="enviarFormulario()">Enviar mensaje</button>
+      <p class="form-note" id="form-msg"></p>
+      <p class="form-note">O escríbeme a <a href="mailto:sofiamonroyproducciones@gmail.com">sofiamonroyproducciones@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">SM PRODUCCIONES</div>
+    <div class="footer-copy">© 2026 <span>Sofía Monroy</span> · Bogotá, Colombia</div>
+  </footer>
+
+  <!-- ===== PÁGINA INTERNA ===== -->
+  <div class="inner-page" id="inner-page">
+    <div class="inner-header">
+      <span class="inner-back" onclick="closeCategory()">← Volver</span>
+      <div class="inner-title" id="inner-title">LIGA BETPLAY</div>
+      <div class="inner-sub" id="inner-sub">Cobertura oficial</div>
+    </div>
+    <div class="inner-grid" id="inner-grid">
+      <!-- Las fotos se generan dinámicamente con JS -->
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+    <span class="lightbox-close" onclick="closeLightbox()">✕ Cerrar</span>
+    <button class="lightbox-arrow prev" onclick="prevPhoto()">&#8592;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+    <button class="lightbox-arrow next" onclick="nextPhoto()">&#8594;</button>
+    <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+  </div>
+
+  <script>
+  // ============================================================
+  // CONFIGURACIÓN DE FOTOS
+  // Agrega aquí las fotos de cada categoría.
+  // Formato: "fotos/nombre-carpeta/nombre-archivo.jpg"
+  // ============================================================
+  const categorias = {
+    "liga-betplay": {
+      titulo: "LIGA BETPLAY",
+      sub: "Cobertura oficial · Dimayor",
+      fotos: [
+        "fotos/liga-betplay/foto1.jpg",
+        "fotos/liga-betplay/foto2.jpg",
+        "fotos/liga-betplay/foto3.jpg",
+        "fotos/liga-betplay/foto4.jpg",
+        "fotos/liga-betplay/foto5.jpg",
+        "fotos/liga-betplay/foto6.jpg",
+        "fotos/liga-betplay/foto7.jpg",
+        "fotos/liga-betplay/foto8.jpg",
+        "fotos/liga-betplay/foto9.jpg",
+        "fotos/liga-betplay/foto10.jpg",
+        "fotos/liga-betplay/foto11.jpg",
+        "fotos/liga-betplay/foto12.jpg",
+        "fotos/liga-betplay/foto13.jpg",
+        "fotos/liga-betplay/foto14.jpg"
+      ]
+    },
+    "close-up": {
+      titulo: "CLOSE-UP",
+      sub: "Primer plano · Expresiones",
+      fotos: [
+        "fotos/close-up/foto1.jpg",
+        "fotos/close-up/foto2.jpg",
+        "fotos/close-up/foto3.jpg",
+        "fotos/close-up/foto4.jpg",
+        "fotos/close-up/foto5.jpg",
+        "fotos/close-up/foto6.jpg",
+        "fotos/close-up/foto7.jpg",
+        "fotos/close-up/foto8.jpg",
+        "fotos/close-up/foto9.jpg",
+        "fotos/close-up/foto10.jpg",
+        "fotos/close-up/foto11.jpg",
+        "fotos/close-up/foto12.jpg",
+        "fotos/close-up/foto13.jpg",
+        "fotos/close-up/foto14.jpg",
+        "fotos/close-up/foto15.jpg",
+        "fotos/close-up/foto16.jpg"
+      ]
+    },
+    "hinchada": {
+      titulo: "HINCHADA",
+      sub: "Tribuna · Barras · Ambiente",
+      fotos: [
+        "fotos/hinchada/foto1.jpg",
+        "fotos/hinchada/foto2.jpg",
+        "fotos/hinchada/foto3.jpg",
+        "fotos/hinchada/foto4.jpg",
+        "fotos/hinchada/foto5.jpg",
+        "fotos/hinchada/foto6.jpg",
+        "fotos/hinchada/foto7.jpg",
+        "fotos/hinchada/foto8.jpg",
+        "fotos/hinchada/foto9.jpg",
+        "fotos/hinchada/foto10.jpg"
+      ]
+    },
+    "detalles": {
+      titulo: "DETALLES",
+      sub: "Botines · Texturas · Gestos",
+      fotos: [
+        "fotos/detalles/foto1.jpg",
+        "fotos/detalles/foto2.jpg",
+        "fotos/detalles/foto3.jpg",
+        "fotos/detalles/foto4.jpg",
+        "fotos/detalles/foto5.jpg",
+        "fotos/detalles/foto6.jpg"
+      ]
+    },
+    "liga-femenina": {
+      titulo: "LIGA FEMENINA",
+      sub: "Dimayor · Fuerza propia",
+      fotos: [
+        "fotos/liga-femenina/foto1.jpg",
+        "fotos/liga-femenina/foto2.jpg",
+        "fotos/liga-femenina/foto3.jpg",
+        "fotos/liga-femenina/foto4.jpg",
+        "fotos/liga-femenina/foto5.jpg",
+        "fotos/liga-femenina/foto6.jpg",
+        "fotos/liga-femenina/foto7.jpg",
+        "fotos/liga-femenina/foto8.jpg",
+        "fotos/liga-femenina/foto9.jpg",
+        "fotos/liga-femenina/foto10.jpg",
+        "fotos/liga-femenina/foto11.jpg",
+        "fotos/liga-femenina/foto12.jpg",
+        "fotos/liga-femenina/foto13.jpg"
+      ]
+    }
+  };
+
+  let currentPhotos = [];
+  let currentIndex = 0;
+  let fotosData = null;
+
+  // Cargar fotos.json una sola vez
+  async function cargarFotos() {
+    if(fotosData) return fotosData;
+    const res = await fetch('fotos.json');
+    fotosData = await res.json();
+    return fotosData;
+  }
+
+  async function openCategory(cat) {
+    const data = categorias[cat];
+    document.getElementById('inner-title').textContent = data.titulo;
+    document.getElementById('inner-sub').textContent = data.sub;
+
+    const grid = document.getElementById('inner-grid');
+    grid.innerHTML = '<div class="grid-sizer"></div><div style="width:100%;text-align:center;padding:3rem;color:#aaa;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;">Cargando...</div>';
+    document.getElementById('inner-page').classList.add('active');
+    document.getElementById('inner-page').scrollTop = 0;
+
+    const fotos = await cargarFotos();
+    const archivos = fotos[cat] || [];
+    currentPhotos = archivos.map(f => `fotos/${cat}/${f}`);
+
+    grid.innerHTML = '';
+
+    if(currentPhotos.length === 0) {
+      grid.innerHTML = '<div class="grid-sizer"></div><div style="width:100%;text-align:center;padding:4rem;color:#aaa;font-size:0.8rem;letter-spacing:3px;text-transform:uppercase;">Próximamente · Coming Soon</div>';
+    } else {
+      currentPhotos.forEach((src, i) => {
+        grid.innerHTML += `
+          <div class="inner-grid-item" onclick="openLightbox(${i})">
+            <img src="${src}" alt="" loading="lazy">
+            <div class="zoom-icon">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 0 0 9.5 3 6.5 6.5 0 0 0 3 9.5 6.5 6.5 0 0 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+          </div>`;
+      });
+    }
+  }
+
+  function closeCategory() {
+    document.getElementById('inner-page').classList.remove('active');
+  }
+
+  function openLightbox(i) {
+    currentIndex = i;
+    document.getElementById('lightbox-img').src = currentPhotos[i];
+    document.getElementById('lightbox-counter').textContent = (i+1) + ' / ' + currentPhotos.length;
+    document.getElementById('lightbox').classList.add('active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+
+  function closeLightboxOutside(e) {
+    if(e.target.id === 'lightbox') closeLightbox();
+  }
+
+  function nextPhoto() {
+    currentIndex = (currentIndex + 1) % currentPhotos.length;
+    openLightbox(currentIndex);
+  }
+
+  function prevPhoto() {
+    currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
+    openLightbox(currentIndex);
+  }
+
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if(!lb.classList.contains('active')) return;
+    if(e.key === 'ArrowRight') nextPhoto();
+    if(e.key === 'ArrowLeft') prevPhoto();
+    if(e.key === 'Escape') closeLightbox();
+  });
+
+  async function enviarFormulario() {
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const msg = document.getElementById('form-msg');
+
+    if(!name || !email || !message) {
+      msg.style.color = '#ff7070';
+      msg.textContent = 'Por favor completa tu nombre, correo y mensaje.';
+      return;
+    }
+
+    const btn = document.querySelector('.btn-send');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('https://formspree.io/f/meeppowo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message })
+      });
+
+      if(res.ok) {
+        msg.style.color = '#9B0E0E';
+        msg.textContent = '✓ Mensaje enviado. Te responderé pronto.';
+        document.getElementById('cf-name').value = '';
+        document.getElementById('cf-email').value = '';
+        document.getElementById('cf-subject').value = '';
+        document.getElementById('cf-message').value = '';
+        btn.textContent = 'Enviar mensaje';
+        btn.disabled = false;
+      } else {
+        throw new Error('Error al enviar');
+      }
+    } catch(e) {
+      msg.style.color = '#ff7070';
+      msg.textContent = 'Hubo un error. Escríbeme directo al correo.';
+      btn.textContent = 'Enviar mensaje';
+      btn.disabled = false;
+    }
+  }
+
+  function openMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+    });
+  });
+  </script>
+
+</body>
+</html>
