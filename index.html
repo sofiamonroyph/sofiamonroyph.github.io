@@ -181,7 +181,7 @@
     .grid-sub { font-size:0.9rem; letter-spacing:3px; color:#ff7070; text-transform:uppercase; font-weight:600; margin-top:0.5rem; }
 
     /* ABOUT */
-    .about-grid { display:grid; grid-template-columns:0.75fr 1fr; gap:5rem; align-items:center; }
+    .about-grid { display:grid; grid-template-columns:0.75fr 1fr; gap:5rem; align-items:start; }
     .about-text p { font-size:1.05rem; color:#333; line-height:2; font-weight:400; margin-bottom:1.5rem; }
     .about-text p strong { color:var(--text); font-weight:600; }
     .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
@@ -225,32 +225,29 @@
     .footer-copy { font-size:0.75rem; color:#ccc; letter-spacing:2px; text-transform:uppercase; font-weight:500; }
     .footer-copy span { color:var(--red); }
 
-    /* ===== PÁGINA INTERNA ===== */
+    /* ===== PÁGINA INTERNA (siempre en negro: hub + galerías) ===== */
     .inner-page {
       display:none; position:fixed; inset:0;
-      background:var(--off-white); z-index:500; overflow-y:auto;
+      background:#0d0d0d; z-index:500; overflow-y:auto;
     }
     .inner-page.active { display:block; }
-    .inner-page.dark-theme { background:#0d0d0d; }
-    .inner-page.dark-theme .inner-header { background:#141414; border-bottom-color:#2a2a2a; }
-    .inner-page.dark-theme .inner-title { color:#fff; }
-    .inner-page.dark-theme .placeholder-label { color:rgba(255,255,255,0.6); }
     .inner-header {
-      background:#fff; border-bottom:1px solid var(--gray-light);
+      background:#141414; border-bottom:1px solid #2a2a2a;
       padding:0 3rem; height:64px;
       display:flex; align-items:center; gap:2rem;
       position:sticky; top:0; z-index:10;
     }
     .inner-back {
       font-family:'Barlow',sans-serif; font-size:0.75rem;
-      letter-spacing:2px; text-transform:uppercase; color:var(--red);
-      cursor:pointer; border:1px solid var(--red);
+      letter-spacing:2px; text-transform:uppercase; color:#fff;
+      cursor:pointer; border:1px solid #fff;
       padding:0.45rem 1.2rem; transition:all 0.2s;
       font-weight:600;
     }
-    .inner-back:hover { background:var(--red); color:#fff; }
-    .inner-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:4px; color:var(--text); }
+    .inner-back:hover { background:var(--red); color:#fff; border-color:var(--red); }
+    .inner-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:4px; color:#fff; }
     .inner-sub { font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--red); font-weight:600; margin-left:auto; }
+    .placeholder-label-dark { color:rgba(255,255,255,0.6); }
 
     .inner-grid {
       columns:3;
@@ -302,20 +299,19 @@
       text-align:center;
     }
     .inner-cierre-line { height:2px; background:var(--red); width:60px; margin:0 auto 2rem; }
-    .inner-cierre p { font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; color:#888; margin-bottom:1rem; }
-    .inner-page.dark-theme .inner-cierre p { color:#aaa; }
+    .inner-cierre p { font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; color:#aaa; margin-bottom:1rem; }
     .inner-cierre a {
       display:inline-block; font-family:'Barlow',sans-serif; font-size:0.75rem;
       letter-spacing:2px; text-transform:uppercase; font-weight:600;
-      color:var(--red); border:1px solid var(--red); padding:0.7rem 2rem;
+      color:#fff; border:1px solid #fff; padding:0.7rem 2rem;
       transition:all 0.2s;
     }
-    .inner-cierre a:hover { background:var(--red); color:#fff; }
+    .inner-cierre a:hover { background:var(--red); color:#fff; border-color:var(--red); }
 
     /* ===== HUB DE SUBCATEGORÍAS (Fútbol Profesional Colombiano) ===== */
     .hub-page {
       display:none; position:fixed; inset:0;
-      background:var(--off-white); z-index:490; overflow-y:auto;
+      background:#0d0d0d; z-index:490; overflow-y:auto;
     }
     .hub-page.active { display:block; }
     .hub-grid-wrap { padding:3rem 4rem; }
@@ -542,7 +538,7 @@
     <h2 class="section-title">PORTAFOLIO</h2>
     <div class="grid">
 
-      <div class="grid-item featured" onclick="openSportHub()">
+      <div class="grid-item" onclick="openSportHub()">
         <img src="liga-betplay/portada.jpg" alt="Fotografía Deportiva">
         <span class="grid-title-static">FOTOGRAFÍA DEPORTIVA</span>
         <div class="grid-overlay">
@@ -551,8 +547,8 @@
         </div>
       </div>
 
-      <div class="grid-item featured" onclick="openCategory('conciertos')">
-        <img src="conciertos/portada.jpg" alt="Fotografía de Conciertos">
+      <div class="grid-item" onclick="openCategory('conciertos')">
+        <img src="conciertos/portada.jpg" alt="Fotografía de Conciertos" style="object-position:center 20%;">
         <span class="grid-title-static">FOTOGRAFÍA DE CONCIERTOS</span>
         <div class="grid-overlay">
           <div class="grid-title-hover">Fotografía de Conciertos</div>
@@ -826,9 +822,6 @@
     tituloEl.style.fontSize = data.titulo.length > 20 ? '1.15rem' : '';
     document.getElementById('inner-sub').textContent = data.sub;
 
-    const innerPage = document.getElementById('inner-page');
-    innerPage.classList.toggle('dark-theme', cat === 'conciertos');
-
     const grid = document.getElementById('inner-grid');
     grid.innerHTML = '<div style="grid-column:span 4;text-align:center;padding:3rem;color:#aaa;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;">Cargando...</div>';
 
@@ -869,11 +862,20 @@
       cierre.innerHTML = `
         <div class="inner-cierre-line"></div>
         <p>¿Te gustó lo que viste?</p>
-        <a href="#contacto" onclick="closeCategory()">Escríbeme</a>`;
-      innerPage.appendChild(cierre);
+        <a href="#contacto" onclick="irAContacto(event)">Escríbeme</a>`;
+      document.getElementById('inner-page').appendChild(cierre);
     }
 
     currentCat = cat;
+  }
+
+  function irAContacto(e) {
+    e.preventDefault();
+    document.getElementById('hub-page').classList.remove('active');
+    document.getElementById('inner-page').classList.remove('active');
+    document.getElementById('lightbox').classList.remove('active');
+    history.replaceState({ view:'home' }, '');
+    document.getElementById('contacto').scrollIntoView({ behavior:'smooth' });
   }
 
   async function openCategory(cat) {
