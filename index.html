@@ -225,28 +225,34 @@
     .footer-copy { font-size:0.75rem; color:#ccc; letter-spacing:2px; text-transform:uppercase; font-weight:500; }
     .footer-copy span { color:var(--red); }
 
-    /* ===== PÁGINA INTERNA (siempre en negro: hub + galerías) ===== */
+    /* ===== PÁGINA INTERNA: galerías de fotos en negro, hub en blanco ===== */
     .inner-page {
       display:none; position:fixed; inset:0;
       background:#0d0d0d; z-index:500; overflow-y:auto;
     }
     .inner-page.active { display:block; }
     .inner-header {
-      background:#141414; border-bottom:1px solid #2a2a2a;
+      background:#fff; border-bottom:1px solid var(--gray-light);
       padding:0 3rem; height:64px;
       display:flex; align-items:center; gap:2rem;
       position:sticky; top:0; z-index:10;
     }
     .inner-back {
       font-family:'Barlow',sans-serif; font-size:0.75rem;
-      letter-spacing:2px; text-transform:uppercase; color:#fff;
-      cursor:pointer; border:1px solid #fff;
+      letter-spacing:2px; text-transform:uppercase; color:var(--red);
+      cursor:pointer; border:1px solid var(--red);
       padding:0.45rem 1.2rem; transition:all 0.2s;
       font-weight:600;
     }
-    .inner-back:hover { background:var(--red); color:#fff; border-color:var(--red); }
-    .inner-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:4px; color:#fff; }
+    .inner-back:hover { background:var(--red); color:#fff; }
+    .inner-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:4px; color:var(--text); }
     .inner-sub { font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--red); font-weight:600; margin-left:auto; }
+
+    /* Dentro de las galerías reales (no el hub), el header también va en negro */
+    .inner-page .inner-header { background:#141414; border-bottom-color:#2a2a2a; }
+    .inner-page .inner-back { color:#fff; border-color:#fff; }
+    .inner-page .inner-back:hover { background:var(--red); color:#fff; border-color:var(--red); }
+    .inner-page .inner-title { color:#fff; }
     .placeholder-label-dark { color:rgba(255,255,255,0.6); }
 
     .inner-grid {
@@ -311,7 +317,7 @@
     /* ===== HUB DE SUBCATEGORÍAS (Fútbol Profesional Colombiano) ===== */
     .hub-page {
       display:none; position:fixed; inset:0;
-      background:#0d0d0d; z-index:490; overflow-y:auto;
+      background:var(--off-white); z-index:490; overflow-y:auto;
     }
     .hub-page.active { display:block; }
     .hub-grid-wrap { padding:3rem 4rem; }
