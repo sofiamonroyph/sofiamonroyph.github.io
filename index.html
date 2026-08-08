@@ -890,7 +890,7 @@
     const innerPage = document.getElementById('inner-page');
     innerPage.classList.add('active');
     innerPage.scrollTop = 0;
-    history.pushState({ view:'category', cat, viaHub }, '');
+    history.pushState({ view:'category', cat, viaHub }, '', '#' + cat);
   }
 
   function closeCategory() { history.back(); }
@@ -898,7 +898,7 @@
   function openSportHub() {
     document.getElementById('hub-page').classList.add('active');
     document.getElementById('hub-page').scrollTop = 0;
-    history.pushState({ view:'hub' }, '');
+    history.pushState({ view:'hub' }, '', '#deportiva');
   }
 
   function closeSportHub() { history.back(); }
@@ -913,7 +913,7 @@
     showLightboxImage(i);
     document.getElementById('lightbox').classList.add('active');
     const viaHub = document.getElementById('hub-page').classList.contains('active');
-    history.pushState({ view:'lightbox', cat: currentCat, index: i, viaHub }, '');
+    history.pushState({ view:'lightbox', cat: currentCat, index: i, viaHub }, '', '#' + currentCat);
   }
 
   function closeLightbox() { history.back(); }
@@ -970,7 +970,18 @@
   }
 
   window.addEventListener('popstate', e => { renderState(e.state); });
-  history.replaceState({ view:'home' }, '');
+
+  (function initFromHash() {
+    const hash = decodeURIComponent(location.hash.replace('#',''));
+    let initialState = { view:'home' };
+    if (hash === 'deportiva') {
+      initialState = { view:'hub' };
+    } else if (hash && categorias[hash]) {
+      initialState = { view:'category', cat: hash, viaHub:false };
+    }
+    history.replaceState(initialState, '', hash ? '#' + hash : location.pathname);
+    renderState(initialState);
+  })();
 
 
   async function enviarFormulario() {
