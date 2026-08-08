@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO básico -->
-  <title>Sofía Monroy — Fotógrafa Deportiva | Liga BetPlay Colombia</title>
-  <meta name="description" content="Sofía Monroy, fotógrafa freelance acreditada en el Fútbol Profesional Colombiano. Cobertura de la Liga BetPlay Dimayor, fotografía deportiva, retratos y más. Bogotá, Colombia.">
-  <meta name="keywords" content="fotógrafa deportiva Colombia, fotografía fútbol colombiano, Liga BetPlay, fotógrafa Bogotá, SM Producciones, Sofía Monroy, fotografía deportiva, FPC">
+  <title>Sofía Monroy — Fotógrafa Deportiva y de Conciertos | Bogotá, Colombia</title>
+  <meta name="description" content="Sofía Monroy, fotógrafa acreditada en el Fútbol Profesional Colombiano. Cobertura de la Liga BetPlay Dimayor y fotografía de conciertos. Bogotá, Colombia.">
+  <meta name="keywords" content="fotógrafa deportiva Colombia, fotografía fútbol colombiano, fotografía de conciertos, Liga BetPlay, fotógrafa Bogotá, SM Producciones, Sofía Monroy, fotografía deportiva, FPC">
   <meta name="author" content="Sofía Monroy">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sofiamonroyph.github.io/">
@@ -16,16 +16,16 @@
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sofiamonroyph.github.io/">
-  <meta property="og:title" content="Sofía Monroy — Fotógrafa Deportiva | Liga BetPlay Colombia">
-  <meta property="og:description" content="Fotógrafa freelance acreditada en el Fútbol Profesional Colombiano. Exposición atrevida, color jerarquizado y edición cinematográfica de alta precisión.">
+  <meta property="og:title" content="Sofía Monroy — Fotógrafa Deportiva y de Conciertos | Bogotá, Colombia">
+  <meta property="og:description" content="Fotógrafa acreditada en el Fútbol Profesional Colombiano. Cobertura deportiva y de conciertos con exposición atrevida, color jerarquizado y edición cinematográfica de alta precisión.">
   <meta property="og:image" content="https://sofiamonroyph.github.io/fotos/hero/portada.jpg">
   <meta property="og:locale" content="es_CO">
   <meta property="og:site_name" content="SM Producciones — Sofía Monroy">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sofía Monroy — Fotógrafa Deportiva">
-  <meta name="twitter:description" content="Fotógrafa freelance acreditada en el Fútbol Profesional Colombiano. Bogotá, Colombia.">
+  <meta name="twitter:title" content="Sofía Monroy — Fotógrafa Deportiva y de Conciertos">
+  <meta name="twitter:description" content="Fotógrafa acreditada en el Fútbol Profesional Colombiano. Cobertura deportiva y de conciertos. Bogotá, Colombia.">
   <meta name="twitter:image" content="https://sofiamonroyph.github.io/fotos/hero/portada.jpg">
 
   <!-- Schema.org (datos estructurados para Google) -->
@@ -34,8 +34,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sofía Monroy",
-    "jobTitle": "Fotógrafa Deportiva",
-    "description": "Fotógrafa freelance acreditada en el Fútbol Profesional Colombiano",
+    "jobTitle": "Fotógrafa Deportiva y de Conciertos",
+    "description": "Fotógrafa acreditada en el Fútbol Profesional Colombiano, con cobertura deportiva y de conciertos",
     "url": "https://sofiamonroyph.github.io",
     "sameAs": [
       "https://www.instagram.com/sofiamonroy.ph",
@@ -292,6 +292,14 @@
       color:rgba(255,255,255,0.6); font-weight:600; text-align:center;
     }
 
+    /* ===== HUB DE SUBCATEGORÍAS (Fútbol Profesional Colombiano) ===== */
+    .hub-page {
+      display:none; position:fixed; inset:0;
+      background:var(--off-white); z-index:490; overflow-y:auto;
+    }
+    .hub-page.active { display:block; }
+    .hub-grid-wrap { padding:3rem 4rem; }
+
     /* ===== LIGHTBOX ===== */
     .lightbox {
       display:none; position:fixed; inset:0;
@@ -492,7 +500,7 @@
     <div class="hero-content">
       <img class="hero-logo" src="img/logo.png" alt="SM Producciones">
       <h1 class="hero-name">SOFÍA <span>MONROY</span></h1>
-      <p class="hero-title">Fotógrafa Deportiva &nbsp;·&nbsp; Bogotá, Colombia &nbsp;·&nbsp; Acreditada FPC</p>
+      <p class="hero-title">Fotografía Deportiva &nbsp;·&nbsp; Fotografía de Conciertos &nbsp;·&nbsp; Bogotá, Colombia</p>
       <div class="hero-btns">
         <a class="btn-primary" href="#portafolio">Ver portafolio</a>
         <a class="btn-instagram" href="https://instagram.com/sofiamonroy.ph" target="_blank">
@@ -514,48 +522,21 @@
     <h2 class="section-title">PORTAFOLIO</h2>
     <div class="grid">
 
-      <div class="grid-item featured" onclick="openCategory('liga-betplay')">
-        <img src="liga-betplay/portada.jpg" alt="Liga BetPlay">
-        <span class="grid-title-static">LIGA BETPLAY</span>
+      <div class="grid-item featured" onclick="openSportHub()">
+        <img src="liga-betplay/portada.jpg" alt="Fotografía Deportiva">
+        <span class="grid-title-static">FOTOGRAFÍA DEPORTIVA</span>
         <div class="grid-overlay">
-          <div class="grid-title-hover">Liga BetPlay</div>
-          <div class="grid-sub">Cobertura oficial · Dimayor</div>
+          <div class="grid-title-hover">Fotografía Deportiva</div>
+          <div class="grid-sub">Acreditación FPC · Fútbol Profesional Colombiano</div>
         </div>
       </div>
 
-      <div class="grid-item" onclick="openCategory('close-up')">
-        <img src="close-up/portada.jpg" alt="Close-Up">
-        <span class="grid-title-static">CLOSE-UP</span>
+      <div class="grid-item" onclick="openCategory('conciertos')">
+        <img src="conciertos/portada.jpg" alt="Fotografía de Conciertos">
+        <span class="grid-title-static">FOTOGRAFÍA DE CONCIERTOS</span>
         <div class="grid-overlay">
-          <div class="grid-title-hover">Close-Up</div>
-          <div class="grid-sub">Primer plano · Expresiones</div>
-        </div>
-      </div>
-
-      <div class="grid-item" onclick="openCategory('hinchada')">
-        <img src="hinchada/portada.jpg" alt="Hinchada" style="object-position: center top;">
-        <span class="grid-title-static">HINCHADA</span>
-        <div class="grid-overlay">
-          <div class="grid-title-hover">Hinchada</div>
-          <div class="grid-sub">Tribuna · Barras · Ambiente</div>
-        </div>
-      </div>
-
-      <div class="grid-item" onclick="openCategory('detalles')">
-        <img src="detalles/portada.jpg" alt="Detalles">
-        <span class="grid-title-static">DETALLES</span>
-        <div class="grid-overlay">
-          <div class="grid-title-hover">Detalles</div>
-          <div class="grid-sub">Botines · Texturas · Gestos</div>
-        </div>
-      </div>
-
-      <div class="grid-item" onclick="openCategory('liga-femenina')">
-        <img src="liga-femenina/portada.jpg" alt="Liga Femenina">
-        <span class="grid-title-static">LIGA FEMENINA</span>
-        <div class="grid-overlay">
-          <div class="grid-title-hover">Liga Femenina</div>
-          <div class="grid-sub">Dimayor · Fuerza propia</div>
+          <div class="grid-title-hover">Fotografía de Conciertos</div>
+          <div class="grid-sub">Luz · Movimiento · Energía</div>
         </div>
       </div>
 
@@ -570,8 +551,7 @@
     <h2 class="section-title">SOFÍA MONROY</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>Soy fotógrafa freelance de la ciudad de Bogotá, <strong>acreditada en el Fútbol Profesional Colombiano</strong>, cubriendo la Liga BetPlay Dimayor tanto en su rama masculina como femenina.</p>
-        <p>Disponible para coberturas deportivas, proyectos editoriales y colaboraciones con medios y clubes.</p>
+        <p>Soy fotógrafa de la ciudad de Bogotá, <strong>acreditada en el Fútbol Profesional Colombiano</strong>, cubriendo la Liga BetPlay Dimayor tanto en su rama masculina como femenina. También documento el mundo de los <strong>conciertos</strong>, llevando la misma mirada cinematográfica del terreno de juego al <strong>escenario</strong>.</p>
       </div>
       <div class="stats-grid">
         <div class="stat-card"><div class="stat-number">2025</div><div class="stat-label">Inicio Liga BetPlay</div></div>
@@ -619,6 +599,56 @@
     <div class="footer-copy">© 2026 <span>Sofía Monroy</span> · Bogotá, Colombia</div>
   </footer>
 
+  <!-- ===== HUB DE SUBCATEGORÍAS: FOTOGRAFÍA DEPORTIVA ===== -->
+  <div class="hub-page" id="hub-page">
+    <div class="inner-header">
+      <span class="inner-back" onclick="closeSportHub()">← Volver</span>
+      <div class="inner-title">FOTOGRAFÍA DEPORTIVA</div>
+      <div class="inner-sub">Acreditación FPC</div>
+    </div>
+    <div class="hub-grid-wrap">
+      <div class="grid" style="max-width:1000px;">
+
+        <div class="grid-item" onclick="openCategory('liga-betplay')">
+          <img src="liga-betplay/portada.jpg" alt="Fútbol Profesional Colombiano">
+          <span class="grid-title-static" style="font-size:1.5rem;right:1.2rem;">FÚTBOL PROFESIONAL COLOMBIANO</span>
+          <div class="grid-overlay">
+            <div class="grid-title-hover" style="font-size:1.9rem;">Fútbol Profesional Colombiano</div>
+            <div class="grid-sub">Liga BetPlay Dimayor</div>
+          </div>
+        </div>
+
+        <div class="grid-item" onclick="openCategory('hinchada')">
+          <img src="hinchada/portada.jpg" alt="Hinchada" style="object-position:center top;">
+          <span class="grid-title-static">HINCHADA</span>
+          <div class="grid-overlay">
+            <div class="grid-title-hover">Hinchada</div>
+            <div class="grid-sub">Tribuna · Barras · Ambiente</div>
+          </div>
+        </div>
+
+        <div class="grid-item" onclick="openCategory('liga-femenina')">
+          <img src="liga-femenina/portada.jpg" alt="Fútbol Profesional Femenino Colombiano">
+          <span class="grid-title-static" style="font-size:1.3rem;right:1.2rem;">FÚTBOL PROFESIONAL FEMENINO COLOMBIANO</span>
+          <div class="grid-overlay">
+            <div class="grid-title-hover" style="font-size:1.7rem;">Fútbol Profesional Femenino Colombiano</div>
+            <div class="grid-sub">Liga Femenina BetPlay Dimayor</div>
+          </div>
+        </div>
+
+        <div class="grid-item" onclick="openCategory('detalles-todas')">
+          <img src="detalles/portada.jpg" alt="Detalles">
+          <span class="grid-title-static">DETALLES</span>
+          <div class="grid-overlay">
+            <div class="grid-title-hover">Detalles</div>
+            <div class="grid-sub">Primer plano · Texturas · Gestos</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- ===== PÁGINA INTERNA ===== -->
   <div class="inner-page" id="inner-page">
     <div class="inner-header">
@@ -650,8 +680,8 @@
   // ============================================================
   const categorias = {
     "liga-betplay": {
-      titulo: "LIGA BETPLAY",
-      sub: "Cobertura oficial · Dimayor",
+      titulo: "FÚTBOL PROFESIONAL COLOMBIANO",
+      sub: "Liga BetPlay Dimayor",
       fotos: [
         "fotos/liga-betplay/foto1.jpg",
         "fotos/liga-betplay/foto2.jpg",
@@ -720,8 +750,8 @@
       ]
     },
     "liga-femenina": {
-      titulo: "LIGA FEMENINA",
-      sub: "Dimayor · Fuerza propia",
+      titulo: "FÚTBOL PROFESIONAL FEMENINO COLOMBIANO",
+      sub: "Liga Femenina BetPlay Dimayor",
       fotos: [
         "fotos/liga-femenina/foto1.jpg",
         "fotos/liga-femenina/foto2.jpg",
@@ -737,7 +767,22 @@
         "fotos/liga-femenina/foto12.jpg",
         "fotos/liga-femenina/foto13.jpg"
       ]
+    },
+    "conciertos": {
+      titulo: "CONCIERTOS",
+      sub: "Luz · Movimiento · Energía",
+      fotos: []
+    },
+    "detalles-todas": {
+      titulo: "DETALLES",
+      sub: "Primer plano · Texturas · Gestos",
+      fotos: []
     }
+  };
+
+  // Categorías cuyas fotos vienen de más de una carpeta de fotos.json
+  const categoriasMultiSource = {
+    "detalles-todas": ["close-up", "detalles"]
   };
 
   let currentPhotos = [];
@@ -754,7 +799,9 @@
 
   async function openCategory(cat) {
     const data = categorias[cat];
-    document.getElementById('inner-title').textContent = data.titulo;
+    const tituloEl = document.getElementById('inner-title');
+    tituloEl.textContent = data.titulo;
+    tituloEl.style.fontSize = data.titulo.length > 20 ? '1.15rem' : '';
     document.getElementById('inner-sub').textContent = data.sub;
 
     const grid = document.getElementById('inner-grid');
@@ -763,8 +810,16 @@
     document.getElementById('inner-page').scrollTop = 0;
 
     const fotos = await cargarFotos();
-    const archivos = fotos[cat] || [];
-    currentPhotos = archivos.map(f => `${cat}/${f}`);
+
+    if (categoriasMultiSource[cat]) {
+      currentPhotos = [];
+      categoriasMultiSource[cat].forEach(src => {
+        (fotos[src] || []).forEach(f => currentPhotos.push(`${src}/${f}`));
+      });
+    } else {
+      const archivos = fotos[cat] || [];
+      currentPhotos = archivos.map(f => `${cat}/${f}`);
+    }
 
     grid.innerHTML = '';
 
@@ -785,6 +840,15 @@
 
   function closeCategory() {
     document.getElementById('inner-page').classList.remove('active');
+  }
+
+  function openSportHub() {
+    document.getElementById('hub-page').classList.add('active');
+    document.getElementById('hub-page').scrollTop = 0;
+  }
+
+  function closeSportHub() {
+    document.getElementById('hub-page').classList.remove('active');
   }
 
   function openLightbox(i) {
